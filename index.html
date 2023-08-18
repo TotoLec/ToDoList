@@ -22,33 +22,26 @@
                     <label for="inputBar">Ajouter une tache</label>
                 </div>
                 <div class="input-field col s1">
-                    <button class="waves-effect waves-teal btn-floating"><i class="ph ph-plus"></i></button>
+                    <button class="waves-effect waves-teal btn-floating" id="addButton"><i class="ph ph-plus"></i></button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input type="search" name="inputSearch" id="inputSearch">
+                    <label for="inputSearch">Rechercher</label>
+                </div>
+                <div class="input-field col s6">
+                    <select id="filterSelector">
+                        <option value="all">Tout</option>
+                        <option value="completed">Terminé</option>
+                        <option value="uncompleted">En cours</option>
+                    </select>
+                    <label>Filtre</label>
                 </div>
             </div>
         </div>
         
         <div id="tasks-container">
-            <div id="task">
-                <label>
-                    <input type="checkbox" />
-                    <span>Faire a manger</span>
-                </label>
-                <button><i class="fa-solid fa-xmark"></i></button>
-            </div>
-            <div id="task">
-                <label>
-                    <input type="checkbox" />
-                    <span>Faire a manger</span>
-                </label>
-                <button><i class="fa-solid fa-xmark"></i></button>
-            </div>
-            <div id="task">
-                <label>
-                    <input type="checkbox" />
-                    <span>Faire a manger</span>
-                </label>
-                <button><i class="fa-solid fa-xmark"></i></button>
-            </div>
         </div>
         
     </div>
@@ -56,5 +49,11 @@
     <script src="node_modules/materialize-css/dist/js/materialize.min.js"></script>
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <script src="scripts/ToDoList.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('select');
+            var instances = M.FormSelect.init(elems);
+        });
+    </script>
 </body>
 </html>

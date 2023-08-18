@@ -54,6 +54,11 @@ header h1{
     margin: 15px 0;
     padding: 5px 15px;
     border-bottom: 1px solid grey;
+    transition: all 0.3s;
+}
+
+.checked{
+    opacity: 0.5;
 }
 
 #task span{
@@ -68,4 +73,9 @@ header h1{
     border: 0;
     cursor: pointer;
     font-size: 1.5rem;
+}
+
+.deleteAnimation{
+    transform: translateX(35px);
+    opacity: 0;
 }
