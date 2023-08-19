@@ -14,38 +14,52 @@ todoSearch.addEventListener('keyup', searchTodo);
 
 // Functions
 
+function checkIfTodoExist(e){
+    console.log(todoListContainer.children.length);
+    const zeroTaskMsg = document.createElement('h2');
+    zeroTaskMsg.innerHTML = 'Liste vide';
+    if (todoListContainer.children.length === 0) {
+        todoListContainer.appendChild(zeroTaskMsg);
+    } else {
+
+    }
+}
+
 function addTodo(event){
     event.preventDefault();
-    // alert(todoInput.value);
     
-    // ToDo Content
-    const todoDiv = document.createElement('div');
-    todoDiv.setAttribute("id", "task");
-    
-    // Label
-    const todoLabel = document.createElement('label');
-    // Input
-    const todoCheckbox = document.createElement('input');
-    todoCheckbox.setAttribute("type", "checkbox");
-    // Span
-    const todoSpan = document.createElement('span');
-    todoSpan.innerHTML = todoInput.value;
-    // ADD TASK TO LOCALSTORAGE
-    saveLocalTodos(todoInput.value);
-    
-    todoLabel.appendChild(todoCheckbox);
-    todoLabel.appendChild(todoSpan);
-    todoDiv.appendChild(todoLabel);
-    
-    // Button
-    const todoDeleteButton = document.createElement('button');
-    todoDeleteButton.innerHTML = '<i class="ph ph-trash"></i>';
-    todoDiv.appendChild(todoDeleteButton);
-    
-    todoListContainer.appendChild(todoDiv);
-    
-    // Clear TodoInput Value
-    todoInput.value = "";
+    if (!todoInput.value == "") {
+        // alert(todoInput.value);
+        
+        // ToDo Content
+        const todoDiv = document.createElement('div');
+        todoDiv.setAttribute("id", "task");
+        
+        // Label
+        const todoLabel = document.createElement('label');
+        // Input
+        const todoCheckbox = document.createElement('input');
+        todoCheckbox.setAttribute("type", "checkbox");
+        // Span
+        const todoSpan = document.createElement('span');
+        todoSpan.innerHTML = todoInput.value;
+        // ADD TASK TO LOCALSTORAGE
+        saveLocalTodos(todoInput.value);
+        
+        todoLabel.appendChild(todoCheckbox);
+        todoLabel.appendChild(todoSpan);
+        todoDiv.appendChild(todoLabel);
+        
+        // Button
+        const todoDeleteButton = document.createElement('button');
+        todoDeleteButton.innerHTML = '<i class="ph ph-trash"></i>';
+        todoDiv.appendChild(todoDeleteButton);
+        
+        todoListContainer.appendChild(todoDiv);
+        
+        // Clear TodoInput Value
+        todoInput.value = "";
+    }
     
 }
 
@@ -130,6 +144,7 @@ function saveLocalTodos(todo){
 }
 
 function getTodos(){
+
     // Check if localstorage already exist
     let tasks;
     if (localStorage.getItem('tasks') === null) {
@@ -163,6 +178,8 @@ function getTodos(){
         
         todoListContainer.appendChild(todoDiv);
     })
+
+    checkIfTodoExist();
 }
 
 function removeLocalStorageTodo(todo){
@@ -173,7 +190,7 @@ function removeLocalStorageTodo(todo){
     } else {
         tasks = JSON.parse(localStorage.getItem('tasks'));
     }
-
+    
     task = todo.children[0].children[1].innerHTML;
     let index = tasks.indexOf(task);
     if (index > -1) {
