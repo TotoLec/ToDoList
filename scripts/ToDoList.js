@@ -14,16 +14,16 @@ todoSearch.addEventListener('keyup', searchTodo);
 
 // Functions
 
-function checkIfTodoExist(e){
-    console.log(todoListContainer.children.length);
-    const zeroTaskMsg = document.createElement('h2');
-    zeroTaskMsg.innerHTML = 'Liste vide';
-    if (todoListContainer.children.length === 0) {
-        todoListContainer.appendChild(zeroTaskMsg);
-    } else {
+// function checkIfTodoExist(e){
+//     console.log(todoListContainer.children.length);
+//     const zeroTaskMsg = document.createElement('h2');
+//     zeroTaskMsg.innerHTML = 'Liste vide';
+//     if (todoListContainer.children.length === 0) {
+//         todoListContainer.appendChild(zeroTaskMsg);
+//     } else {
 
-    }
-}
+//     }
+// }
 
 function addTodo(event){
     event.preventDefault();
@@ -179,7 +179,7 @@ function getTodos(){
         todoListContainer.appendChild(todoDiv);
     })
 
-    checkIfTodoExist();
+    // checkIfTodoExist();
 }
 
 function removeLocalStorageTodo(todo){
