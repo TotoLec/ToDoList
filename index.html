@@ -9,42 +9,47 @@
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    
-    <div id="center-container">
-        <header>
-            <h1>ToDoList</h1>
-        </header>
-        
-        <div id="input-container">
-            <div class="row">
-                <div class="input-field col s11">
-                    <input id="inputBar" type="text">
-                    <label for="inputBar">Ajouter une tache</label>
+    <main>
+        <div id="center-container">
+            <header>
+                <h1>ToDoList</h1>
+                <div id="input-container">
+                    <div class="row">
+                        <div class="input-field col s10">
+                            <input id="inputBar" type="text">
+                            <label for="inputBar">Ajouter une tache</label>
+                        </div>
+                        <div class="input-field col s2" id="addButtonContainer">
+                            <button class="waves-effect waves-teal btn-floating" id="addButton"><i class="ph ph-plus"></i></button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input type="text" name="inputSearch" id="inputSearch">
+                            <label for="inputSearch">Rechercher</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <select id="filterSelector">
+                                <option value="all">Tout</option>
+                                <option value="completed">Terminé</option>
+                                <option value="uncompleted">En cours</option>
+                            </select>
+                            <label>Filtre</label>
+                        </div>
+                    </div>
                 </div>
-                <div class="input-field col s1">
-                    <button class="waves-effect waves-teal btn-floating" id="addButton"><i class="ph ph-plus"></i></button>
-                </div>
+            </header>
+            
+            
+            
+            <div id="tasks-container">
             </div>
-            <div class="row">
-                <div class="input-field col s6">
-                    <input type="search" name="inputSearch" id="inputSearch">
-                    <label for="inputSearch">Rechercher</label>
-                </div>
-                <div class="input-field col s6">
-                    <select id="filterSelector">
-                        <option value="all">Tout</option>
-                        <option value="completed">Terminé</option>
-                        <option value="uncompleted">En cours</option>
-                    </select>
-                    <label>Filtre</label>
-                </div>
-            </div>
+            
         </div>
         
-        <div id="tasks-container">
-        </div>
-        
-    </div>
+    </main>
+    <div id="circle1"></div>
+    <div id="circle2"></div>
     
     <script src="node_modules/materialize-css/dist/js/materialize.min.js"></script>
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
