@@ -58,6 +58,7 @@ main{
 
 header{
     width: 100%;
+    min-width: 400px;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -67,6 +68,7 @@ header{
 
 header h1{
     font-weight: bold;
+    padding: 0 10px;
 }
 
 #input-container{
@@ -116,4 +118,55 @@ header h1{
 .deleteAnimation{
     transform: translateX(35px);
     opacity: 0;
+}
+
+@media screen and (max-width: 480px){
+    #circle1,#circle2{
+        display: none;
+    }
+    #center-container{
+        min-height: 100vh;
+        border-radius: 0;
+    }
+    header{
+        border-radius: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 768px){
+    #circle1,#circle2{
+        display: none;
+    }
+    #center-container{
+        min-height: 100vh;
+        border-radius: 0;
+    }
+    header{
+        border-radius: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 1024px){
+    #circle1, #circle2{
+        height: 15rem;
+        width: 15rem;
+        border-radius: 40%;
+        position: absolute;
+    }
+    #circle1{
+        top: 2%;
+        right: 10%;
+    }
+    
+    #circle2{
+        bottom: 2%;
+        left: 10%;
+    }
+    #center-container{
+        min-height: 50vh;
+        border-radius: 0;
+    }
+    header{
+        border-radius: 1.5rem;
+    }
 }
